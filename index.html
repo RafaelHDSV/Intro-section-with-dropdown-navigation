@@ -96,6 +96,76 @@
       border-radius: 1rem;
     }
 
+    main {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 5rem;
+      gap: 10rem;
+    }
+
+    main .info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      height: 100%;
+    }
+
+    main .text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 4rem;
+    }
+
+    .text h1 {
+      max-width: 30rem;
+      font-size: 81px;
+      font-weight: 700;
+      color: var(--black);
+    }
+
+    .text p {
+      max-width: 25rem;
+      font-weight: 500;
+      color: var(--gray);
+      line-height: 1.5rem;
+    }
+
+    .text button {
+      outline: 0;
+      border: none;
+      padding: 1.2rem 1.5rem;
+      border-radius: 1rem;
+      background-color: var(--black);
+      color: var(--white);
+      font-size: 20px;
+      font-weight: 800;
+    }
+
+    main img {
+      max-width: 25rem;
+      width: 100%;
+    }
+
+    .enterprises {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 40rem;
+      width: 100%;
+      padding: 7rem 0 0 0;
+    }
+
+    .enterprises img {
+      max-width: 5rem;
+      width: 100%;
+    }
+
     /* .attribution {
       font-size: 11px;
       text-align: center;
@@ -134,12 +204,25 @@
     </div>
   </header>
 
-  <!-- Make remote work -->
+  <main>
+    <div class="info">
+      <div class="text">
+        <h1>Make remote work</h1>
+        <p>Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch
+          productivity soar.</p>
+        <button>Learn more</button>
+      </div>
 
-  <!-- Get your team in sync, no matter your location. Streamline processes, -->
-  <!-- create team rituals, and watch productivity soar. -->
+      <div class="enterprises">
+        <img src="images/client-databiz.svg" alt="client-databiz.svg">
+        <img src="images/client-audiophile.svg" alt="client-audiophile.svg">
+        <img src="images/client-meet.svg" alt="client-meet.svg">
+        <img src="images/client-maker.svg" alt="client-maker.svg">
+      </div>
+    </div>
 
-  <!-- Learn more -->
+    <img src="images/image-hero-desktop.png" alt="image-hero-desktop.png">
+  </main>
 
   <!-- <footer class="attribution">
     <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.</p>
