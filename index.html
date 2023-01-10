@@ -114,7 +114,7 @@
       flex-direction: row;
       justify-content: center;
       align-items: center;
-      padding: 5rem;
+      padding: 5rem 5rem 2.5rem 5rem;
       gap: 10rem;
     }
 
@@ -187,14 +187,26 @@
       width: 100%;
     }
 
-    /* .attribution {
+    footer a {
       font-size: 11px;
       text-align: center;
+      color: var(--gray);
+      text-decoration: none;
+      cursor: pointer;
+      transition: .5s all ease-in-out;
+
     }
 
-    .attribution a {
-      color: hsl(228, 45%, 44%);
-    } */
+    footer a:hover {
+      color: var(--black);
+      font-size: 20px;
+    }
+
+    footer p {
+      font-size: 11px;
+      text-align: center;
+      color: var(--black);
+    }
   </style>
 </head>
 
@@ -245,10 +257,10 @@
     <img src="images/image-hero-desktop.png" alt="image-hero-desktop.png">
   </main>
 
-  <!-- <footer class="attribution">
+  <footer class="attribution">
     <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.</p>
     <p>Coded by <a href="https://github.com/RafaelHDSV" target="_blank">Rafael Henrique de Sousa Vieira</a>.</p>
-  </footer> -->
+  </footer>
 </body>
 
 </html>
