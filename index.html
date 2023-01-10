@@ -70,7 +70,8 @@
       transition: .5s all ease;
     }
 
-    .content_itens p:hover {
+    .content_itens p:hover,
+    .options_item li:hover {
       color: var(--black);
     }
 
@@ -94,7 +95,7 @@
       border-radius: 1rem;
       background-color: var(--white);
       color: var(--gray);
-      box-shadow: 0 0 10px 0px var(--black);
+      box-shadow: 0px 0px 60px -25px rgba(0, 0, 0, 0.75);
     }
 
     .options_item div {
@@ -106,7 +107,8 @@
     .options_item p,
     .options_item li {
       font-size: 16px;
-      width: 100%;
+      cursor: pointer;
+      transition: .5s all ease;
     }
 
     .company {
@@ -243,10 +245,16 @@
       color: var(--black);
     }
 
-    /* .hide {
+    .hide {
       display: none;
       opacity: 0;
-    } */
+    }
+
+    @media screen and (max-width: 1024px) {
+      .user_options {
+        display: none;
+      }
+    }
   </style>
 </head>
 
@@ -258,26 +266,26 @@
       <div class="content_itens">
         <div class="item">
           <p>Features</p>
-          <img src="images/icon-arrow-down.svg" alt="icon-arrow-down.svg">
+          <img class="arrow" src="images/icon-arrow-down.svg" alt="icon-arrow-down.svg">
 
           <ul class="options_item hide">
             <div>
-              <img src="images/icon-todo.svg" alt="">
+              <img src="images/icon-todo.svg" alt="icon-todo.svg">
               <p>Todo list</p>
             </div>
 
             <div>
-              <img src="images/icon-todo.svg" alt="">
+              <img src="images/icon-calendar.svg" alt="icon-calendar.svg">
               <p>Calendar</p>
             </div>
 
             <div>
-              <img src="images/icon-todo.svg" alt="">
+              <img src="images/icon-reminders.svg" alt="icon-reminders.svg">
               <p>Reminders</p>
             </div>
 
             <div>
-              <img src="images/icon-todo.svg" alt="">
+              <img src="images/icon-planning.svg" alt="icon-planning.svg">
               <p>Planning</p>
             </div>
           </ul>
@@ -285,7 +293,7 @@
 
         <div class="item">
           <p>Company</p>
-          <img src="images/icon-arrow-down.svg" alt="icon-arrow-down.svg">
+          <img class="arrow" src="images/icon-arrow-down.svg" alt="icon-arrow-down.svg">
 
           <ul class="company options_item hide">
             <li>History</li>
@@ -332,7 +340,7 @@
 
   <script>
     let itemHeader = document.querySelectorAll('.item')
-    let arrowImg = document.querySelectorAll('.item img')
+    let arrowImg = document.querySelectorAll('.arrow')
     let optionsItem = document.querySelectorAll('.options_item')
 
     for (let i = 0; i < itemHeader.length; i++) {
