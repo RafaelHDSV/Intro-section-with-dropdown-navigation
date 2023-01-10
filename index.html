@@ -30,6 +30,7 @@
       box-sizing: border-box;
       font-family: 'Epilogue', sans-serif;
       font-size: 18px;
+      user-select: none;
     }
 
     body {
@@ -207,6 +208,11 @@
       text-align: center;
       color: var(--black);
     }
+
+    .hide {
+      display: none;
+      opacity: 0;
+    }
   </style>
 </head>
 
@@ -219,11 +225,24 @@
         <div class="item">
           <p>Features</p>
           <img src="images/icon-arrow-down.svg" alt="icon-arrow-down.svg">
+
+          <ul class="options_item hide">
+            <li>Todo list</li>
+            <li>Calendar</li>
+            <li>Reminders</li>
+            <li>Planning</li>
+          </ul>
         </div>
 
         <div class="item">
           <p>Company</p>
           <img src="images/icon-arrow-down.svg" alt="icon-arrow-down.svg">
+
+          <ul class="options_item hide">
+            <li>History</li>
+            <li>Our Team</li>
+            <li>Blog</li>
+          </ul>
         </div>
 
         <p>Careers</p>
@@ -261,6 +280,24 @@
     <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.</p>
     <p>Coded by <a href="https://github.com/RafaelHDSV" target="_blank">Rafael Henrique de Sousa Vieira</a>.</p>
   </footer>
+
+  <script>
+    let itemHeader = document.querySelectorAll('.item')
+    let arrowImg = document.querySelectorAll('.item img')
+    let optionsItem = document.querySelectorAll('.options_item')
+
+    for (let i = 0; i < itemHeader.length; i++) {
+      itemHeader[i].addEventListener('click', () => {
+        if (arrowImg[i].getAttribute('src') == 'images/icon-arrow-down.svg') {
+          arrowImg[i].setAttribute('src', 'images/icon-arrow-up.svg')
+          optionsItem[i].classList.remove('hide')
+        } else {
+          arrowImg[i].setAttribute('src', 'images/icon-arrow-down.svg')
+          optionsItem[i].classList.add('hide')
+        }
+      })
+    }
+  </script>
 </body>
 
 </html>
