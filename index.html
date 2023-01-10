@@ -90,18 +90,26 @@
       bottom: -10rem;
       right: 0;
       list-style: none;
-      padding: 1rem 2rem;
+      padding: 1rem 1.8rem;
       border-radius: 1rem;
       background-color: var(--white);
       color: var(--gray);
       box-shadow: 0 0 10px 0px var(--black);
     }
 
-    .options_item li {
-      font-size: 16px;
+    .options_item div {
+      display: flex;
+      flex-direction: row;
+      gap: .7rem;
     }
 
-    .options_item {
+    .options_item p,
+    .options_item li {
+      font-size: 16px;
+      width: 100%;
+    }
+
+    .company {
       position: absolute;
       left: 0;
       right: auto;
@@ -253,10 +261,25 @@
           <img src="images/icon-arrow-down.svg" alt="icon-arrow-down.svg">
 
           <ul class="options_item hide">
-            <li>Todo list</li>
-            <li>Calendar</li>
-            <li>Reminders</li>
-            <li>Planning</li>
+            <div>
+              <img src="images/icon-todo.svg" alt="">
+              <p>Todo list</p>
+            </div>
+
+            <div>
+              <img src="images/icon-todo.svg" alt="">
+              <p>Calendar</p>
+            </div>
+
+            <div>
+              <img src="images/icon-todo.svg" alt="">
+              <p>Reminders</p>
+            </div>
+
+            <div>
+              <img src="images/icon-todo.svg" alt="">
+              <p>Planning</p>
+            </div>
           </ul>
         </div>
 
@@ -264,7 +287,7 @@
           <p>Company</p>
           <img src="images/icon-arrow-down.svg" alt="icon-arrow-down.svg">
 
-          <ul class="options_item hide">
+          <ul class="company options_item hide">
             <li>History</li>
             <li>Our Team</li>
             <li>Blog</li>
