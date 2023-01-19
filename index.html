@@ -49,6 +49,10 @@
       align-items: center;
     }
 
+    .header_mobile {
+      display: none;
+    }
+
     .contents {
       display: flex;
       flex-direction: row;
@@ -205,7 +209,8 @@
       border: 1px solid var(--black);
     }
 
-    main img {
+    main img,
+    .hero {
       max-width: 25rem;
       width: 100%;
     }
@@ -252,10 +257,120 @@
     }
 
     @media screen and (max-width: 1024px) {
+      .header_mobile {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
 
-      .content_itens,
-      .user_options {
+      header {
         display: none;
+      }
+
+      main {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+        gap: 10rem;
+      }
+
+      main .info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        height: 100%;
+      }
+
+      main .text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 4rem;
+      }
+
+      .text h1 {
+        max-width: 30rem;
+        font-size: 81px;
+        font-weight: 700;
+        color: var(--black);
+      }
+
+      .text p {
+        max-width: 25rem;
+        font-weight: 500;
+        color: var(--gray);
+        line-height: 1.5rem;
+      }
+
+      .text button {
+        outline: 0;
+        border: none;
+        padding: 1.2rem 1.5rem;
+        border-radius: 1rem;
+        background-color: var(--black);
+        color: var(--white);
+        font-size: 20px;
+        font-weight: 800;
+        cursor: pointer;
+        transition: .5s all ease-in-out;
+      }
+
+      .text button:hover {
+        background-color: var(--white);
+        color: var(--black);
+        border: 1px solid var(--black);
+      }
+
+      main img,
+      .hero {
+        max-width: none;
+        width: 100%;
+      }
+
+      .enterprises {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 40rem;
+        width: 100%;
+        padding: 7rem 0 0 0;
+      }
+
+      .enterprises img {
+        max-width: 5rem;
+        width: 100%;
+      }
+
+      footer a {
+        font-size: 11px;
+        text-align: center;
+        color: var(--gray);
+        text-decoration: none;
+        cursor: pointer;
+        transition: .5s all ease-in-out;
+
+      }
+
+      footer a:hover {
+        color: var(--black);
+        font-size: 20px;
+      }
+
+      footer p {
+        font-size: 11px;
+        text-align: center;
+        color: var(--black);
+      }
+
+      .hide {
+        display: none;
+        opacity: 0;
       }
     }
   </style>
@@ -316,8 +431,14 @@
     </div>
   </header>
 
+  <div class="header_mobile">
+    <img src="images/logo.svg" alt="logo.svg">
+
+    <img src="images/icon-menu.svg" alt="icon-menu.svg">
+  </div>
+
   <main>
-    <div class="info">
+    <div class=" info">
       <div class="text">
         <h1>Make remote work</h1>
         <p>Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch
@@ -333,7 +454,7 @@
       </div>
     </div>
 
-    <img src="images/image-hero-desktop.png" alt="image-hero-desktop.png">
+    <img class="hero" src="images/image-hero-desktop.png" alt="image-hero-desktop.png">
   </main>
 
   <footer class="attribution">
@@ -345,6 +466,17 @@
     let itemHeader = document.querySelectorAll('.item')
     let arrowImg = document.querySelectorAll('.arrow')
     let optionsItem = document.querySelectorAll('.options_item')
+    let header = document.querySelector('header')
+    let headerMobile = document.querySelector('.header_mobile')
+    let heroImg = document.querySelector('.hero')
+
+    setInterval(() => {
+      if (window.screen.width < 1024) {
+        heroImg.src = 'images/image-hero-mobile.png'
+      } else {
+        heroImg.src = 'images/image-hero-desktop.png'
+      }
+    }, 500)
 
     for (let i = 0; i < itemHeader.length; i++) {
       itemHeader[i].addEventListener('click', () => {
