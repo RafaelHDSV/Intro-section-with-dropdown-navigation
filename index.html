@@ -283,7 +283,7 @@
       }
 
       .content_mobile {
-        display: flex;
+        display: none;
         flex-direction: column;
         position: fixed;
         right: 0rem;
@@ -311,6 +311,32 @@
 
       .user_options button {
         width: 100%;
+      }
+
+      .item {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .item_title {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: .5rem;
+      }
+
+      .options_item {
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        position: initial;
+        list-style: none;
+        padding: 1rem 1.8rem;
+        border-radius: 1rem;
+        background-color: var(--white);
+        color: var(--gray);
+        box-shadow: none;
       }
 
       main {
@@ -360,8 +386,7 @@
 </head>
 
 <body>
-  <!-- <div class="filter hide"></div> -->
-  <div class="filter"></div>
+  <div class="filter hide"></div>
 
   <header>
     <div class="contents">
@@ -423,8 +448,48 @@
     <img class="icon_menu" src="images/icon-menu.svg" alt="icon-menu.svg">
 
     <div class="content_mobile">
-      <p>Features</p>
-      <p>Company</p>
+      <div class="item">
+        <div class="item_title">
+          <p>Features</p>
+          <img class="arrow" src="images/icon-arrow-down.svg" alt="icon-arrow-down.svg">
+        </div>
+
+        <ul class="options_item hide">
+          <div>
+            <img src="images/icon-todo.svg" alt="icon-todo.svg">
+            <p>Todo list</p>
+          </div>
+
+          <div>
+            <img src="images/icon-calendar.svg" alt="icon-calendar.svg">
+            <p>Calendar</p>
+          </div>
+
+          <div>
+            <img src="images/icon-reminders.svg" alt="icon-reminders.svg">
+            <p>Reminders</p>
+          </div>
+
+          <div>
+            <img src="images/icon-planning.svg" alt="icon-planning.svg">
+            <p>Planning</p>
+          </div>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item_title">
+          <p>Company</p>
+          <img class="arrow" src="images/icon-arrow-down.svg" alt="icon-arrow-down.svg">
+        </div>
+
+        <ul class="company options_item hide">
+          <li>History</li>
+          <li>Our Team</li>
+          <li>Blog</li>
+        </ul>
+      </div>
+
       <p>Careers</p>
       <p>About</p>
 
@@ -494,9 +559,11 @@
         if (arrowImg[i].getAttribute('src') == 'images/icon-arrow-down.svg') {
           arrowImg[i].setAttribute('src', 'images/icon-arrow-up.svg')
           optionsItem[i].classList.remove('hide')
+          optionsItem[i].style.display = 'flex'
         } else {
           arrowImg[i].setAttribute('src', 'images/icon-arrow-down.svg')
           optionsItem[i].classList.add('hide')
+          optionsItem[i].style.display = 'none'
         }
       })
     }
