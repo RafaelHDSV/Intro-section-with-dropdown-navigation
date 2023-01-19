@@ -269,61 +269,30 @@
       }
 
       main {
-        display: flex;
         flex-direction: column-reverse;
-        justify-content: center;
-        align-items: center;
-        padding: 1rem;
-        gap: 10rem;
+        padding: 2rem 0;
+        gap: 5rem;
       }
 
       main .info {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: flex-start;
-        height: 100%;
+        justify-content: center;
+        align-items: center;
       }
 
       main .text {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        gap: 4rem;
+        text-align: center;
+        align-items: center;
+        gap: 1.5rem;
       }
 
       .text h1 {
-        max-width: 30rem;
-        font-size: 81px;
-        font-weight: 700;
-        color: var(--black);
+        max-width: none;
+        font-size: 36px;
       }
 
       .text p {
         max-width: 25rem;
-        font-weight: 500;
-        color: var(--gray);
-        line-height: 1.5rem;
-      }
-
-      .text button {
-        outline: 0;
-        border: none;
-        padding: 1.2rem 1.5rem;
-        border-radius: 1rem;
-        background-color: var(--black);
-        color: var(--white);
-        font-size: 20px;
-        font-weight: 800;
-        cursor: pointer;
-        transition: .5s all ease-in-out;
-      }
-
-      .text button:hover {
-        background-color: var(--white);
-        color: var(--black);
-        border: 1px solid var(--black);
+        line-height: 2rem;
       }
 
       main img,
@@ -333,44 +302,13 @@
       }
 
       .enterprises {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        max-width: 40rem;
-        width: 100%;
-        padding: 7rem 0 0 0;
+        max-width: none;
+        padding: 3rem 0 0 0;
       }
 
       .enterprises img {
-        max-width: 5rem;
+        max-width: 4rem;
         width: 100%;
-      }
-
-      footer a {
-        font-size: 11px;
-        text-align: center;
-        color: var(--gray);
-        text-decoration: none;
-        cursor: pointer;
-        transition: .5s all ease-in-out;
-
-      }
-
-      footer a:hover {
-        color: var(--black);
-        font-size: 20px;
-      }
-
-      footer p {
-        font-size: 11px;
-        text-align: center;
-        color: var(--black);
-      }
-
-      .hide {
-        display: none;
-        opacity: 0;
       }
     }
   </style>
@@ -434,7 +372,14 @@
   <div class="header_mobile">
     <img src="images/logo.svg" alt="logo.svg">
 
-    <img src="images/icon-menu.svg" alt="icon-menu.svg">
+    <img class="icon_menu" src="images/icon-menu.svg" alt="icon-menu.svg">
+
+    <div class="content_mobile">
+      <p>Features</p>
+      <p>Company</p>
+      <p>Careers</p>
+      <p>About</p>
+    </div>
   </div>
 
   <main>
@@ -466,9 +411,16 @@
     let itemHeader = document.querySelectorAll('.item')
     let arrowImg = document.querySelectorAll('.arrow')
     let optionsItem = document.querySelectorAll('.options_item')
-    let header = document.querySelector('header')
-    let headerMobile = document.querySelector('.header_mobile')
     let heroImg = document.querySelector('.hero')
+    let menuIcon = document.querySelector('.icon_menu')
+
+    menuIcon.addEventListener('click', () => {
+      if (menuIcon.getAttribute('src') == 'images/icon-menu.svg') {
+        menuIcon.src = 'images/icon-close-menu.svg'
+      } else {
+        menuIcon.src = 'images/icon-menu.svg'
+      }
+    })
 
     setInterval(() => {
       if (window.screen.width < 1024) {
