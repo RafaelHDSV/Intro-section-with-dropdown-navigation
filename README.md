@@ -29,7 +29,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: URL SOLUTION HERE
+- Solution URL: https://www.frontendmentor.io/solutions/intro-section-with-dropdown-navigation-ZAl2jXkza1
 - Live Site URL: https://intro-section-with-dropdown-navigati.netlify.app
 
 ### Screenshot
