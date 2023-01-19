@@ -42,6 +42,16 @@
       padding: 2rem;
     }
 
+    .filter {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100%;
+      background-color: var(--black);
+      opacity: .7;
+    }
+
     header {
       display: flex;
       flex-direction: row;
@@ -50,6 +60,10 @@
     }
 
     .header_mobile {
+      display: none;
+    }
+
+    .content_mobile {
       display: none;
     }
 
@@ -268,6 +282,37 @@
         display: none;
       }
 
+      .content_mobile {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        right: 0rem;
+        top: 0rem;
+        background-color: var(--white);
+        color: var(--gray);
+        width: 15rem;
+        height: 100vh;
+        padding: 5rem 0 0 2rem;
+        gap: 2rem;
+      }
+
+      .icon_menu {
+        z-index: 2;
+      }
+
+      .user_options {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem 2rem 0 0;
+        width: 100%;
+      }
+
+      .user_options button {
+        width: 100%;
+      }
+
       main {
         flex-direction: column-reverse;
         padding: 2rem 0;
@@ -315,6 +360,9 @@
 </head>
 
 <body>
+  <!-- <div class="filter hide"></div> -->
+  <div class="filter"></div>
+
   <header>
     <div class="contents">
       <img src="images/logo.svg" alt="logo.svg">
@@ -379,6 +427,11 @@
       <p>Company</p>
       <p>Careers</p>
       <p>About</p>
+
+      <div class="user_options">
+        <button>Login</button>
+        <button>Register</button>
+      </div>
     </div>
   </div>
 
@@ -413,12 +466,18 @@
     let optionsItem = document.querySelectorAll('.options_item')
     let heroImg = document.querySelector('.hero')
     let menuIcon = document.querySelector('.icon_menu')
+    let contentMobile = document.querySelector('.content_mobile')
+    let filterMobile = document.querySelector('.filter')
 
     menuIcon.addEventListener('click', () => {
       if (menuIcon.getAttribute('src') == 'images/icon-menu.svg') {
         menuIcon.src = 'images/icon-close-menu.svg'
+        contentMobile.style.display = 'flex'
+        filterMobile.classList.remove('hide')
       } else {
         menuIcon.src = 'images/icon-menu.svg'
+        contentMobile.style.display = 'none'
+        filterMobile.classList.add('hide')
       }
     })
 
